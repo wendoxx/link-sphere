@@ -1,11 +1,10 @@
 package org.example.linksphere.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,6 +15,9 @@ public class RoleModel {
     private Long id;
     @Column(name = "name", nullable = false)
     private String name;
+
+    @ManyToMany(mappedBy = "roleId")
+    private Set<UserModel> userId;
 
     public enum Values {
 

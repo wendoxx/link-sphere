@@ -6,6 +6,7 @@ import lombok.Data;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Data
@@ -18,8 +19,8 @@ public class PostModel implements Serializable {
     @Id
     private Long id;
 
-    @Column(name = "user_id")
-    private Long userId;
+    @ManyToMany(mappedBy = "postId")
+    private Set<UserModel> userId;
 
     @Column(name = "title", nullable = false)
     private String title;
