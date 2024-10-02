@@ -2,6 +2,7 @@ package org.example.linksphere.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Generated;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -17,6 +18,8 @@ public class PostModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_seq")
+    @SequenceGenerator(name = "post_seq", sequenceName = "post_seq", allocationSize = 1)
     private Long id;
 
     @ManyToMany(mappedBy = "postId")
