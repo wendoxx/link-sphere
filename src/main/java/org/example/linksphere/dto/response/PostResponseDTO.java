@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 public class PostResponseDTO {
+    private Long id;
     private String title;
     private String content;
     private LocalDateTime createdAt = LocalDateTime.now();
