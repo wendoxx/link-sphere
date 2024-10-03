@@ -1,5 +1,6 @@
 package org.example.linksphere.repository;
 
+import org.apache.catalina.User;
 import org.example.linksphere.model.PostModel;
 import org.example.linksphere.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,5 @@ import java.util.Set;
 public interface PostRepository extends JpaRepository<PostModel, Long>{
     Optional<PostModel> findByTitle(String title);
     Optional<PostModel> findByContent(String content);
+    Optional<PostModel> findByUserId(UserModel userId);
 }

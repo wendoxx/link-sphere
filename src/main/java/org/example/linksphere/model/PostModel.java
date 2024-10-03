@@ -3,7 +3,6 @@ package org.example.linksphere.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Generated;
 
 import java.io.Serial;
 import java.io.Serializable;
