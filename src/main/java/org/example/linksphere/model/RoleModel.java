@@ -2,6 +2,7 @@ package org.example.linksphere.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import java.util.Set;
@@ -9,6 +10,7 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "tb_role")
+@EqualsAndHashCode(of = "id")
 public class RoleModel {
 
     @Id
