@@ -2,6 +2,7 @@ package org.example.linksphere.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Entity
 @Data
 @Table(name = "tb_user")
+@EqualsAndHashCode(of = "id")
 public class UserModel implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -25,7 +27,7 @@ public class UserModel implements Serializable {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "email", unique = true)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
     @ManyToMany
