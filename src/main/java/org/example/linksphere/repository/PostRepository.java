@@ -12,5 +12,4 @@ import java.util.Set;
 public interface PostRepository extends JpaRepository<PostModel, Long>{
     Optional<PostModel> findByTitle(String title);
     Optional<PostModel> findByContent(String content);
-    Optional<PostModel> findByUserUsername(String username);
 }
